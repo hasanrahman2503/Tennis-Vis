@@ -11,8 +11,8 @@ def get_data():
     np_array = data.values
     np_array_specific = data.iloc[:, [2,3,4,5,6,7,8,9]].values
     np_out = data.iloc[:, 12].values
-    limited_array_in = np_array_specific[:500]
-    limited_array_out = np_out[:500]
+    limited_array_in = np_array_specific[:1000]
+    limited_array_out = np_out[:1000]
     
     x_train = np.array(limited_array_in, dtype=float)
     y_train = np.array(limited_array_out, dtype=float)  # Quadratic relationship
@@ -21,20 +21,38 @@ def get_data():
 def train_model(x_train,y_train):
     model = keras.Sequential()
     model.add(layers.Dense(
-        8, # Amount of Neurons
+        20, # Amount of Neurons
         input_dim=8, # Define an input dimension because this is the first layer
         activation='relu' # Use relu activation function because all inputs are positive
         ))
 
+    model.add(layers.Dense(
+        20, 
+        activation='relu' 
+        ))
+    
+    model.add(layers.Dense(
+        20, 
+        activation='relu' 
+        ))
+    
+    model.add(layers.Dense(
+        20, 
+        activation='relu' 
+        ))
+    
     model.add(layers.Dense(
         1, # Amount of Neurons. We want one output
         activation='sigmoid' # Use sigmoid because we want to output a binary classification
         ))
 
     load_model(model)
+
+    learning_rate = 0.0001
+    optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
     
-    model.compile(optimizer='sgd', loss='mean_squared_error')
-    model.fit(x_train, y_train, epochs=5, batch_size=10)
+    model.compile(optimizer=optimizer, loss='mean_squared_error')
+    model.fit(x_train, y_train, epochs=150)#, batch_size=500
 
     save_model(model)
 
