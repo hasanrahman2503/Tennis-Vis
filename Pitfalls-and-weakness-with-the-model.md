@@ -1,2 +1,3 @@
 <img src="https://github.com/hasanrahman2503/Tennis-Vis/blob/c8a642a91c42a128eb51ac9e555c2deb58fa262d/Overfitting.png" width="800" height="400">
-As we fit our model we
+As we fit our model we make changes to reduce our residual (The error in model with the actual data points). In the example shown we can see that when the model is overfitted it can become inaccurate at predicting values outside of the inputs it has been trained on.
+You can think of this like the model trying to learn by memorising answers when it is overfitted, when you ask it something its unfamilior with it doesn't give an accurate answer since all it is doing is memorising answers.
