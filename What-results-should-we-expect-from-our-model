@@ -1,0 +1,1 @@
+There should be some residual in our model, this is because our data is incomplete for example hitspeed is rounded so it doesn’t have its true value. This is largely insignificant, the other much more significant factor will be from the fact that tennis is a two player game. So a seemingly bad serve may give a ace against a bad player and vice versa.
