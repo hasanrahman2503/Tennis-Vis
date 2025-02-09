@@ -23,22 +23,22 @@ def train_model(x_train,y_train):
     model.add(layers.Dense(
         20, # Amount of Neurons
         input_dim=8, # Define an input dimension because this is the first layer
-        activation='sigmoid' # Use relu activation function because all inputs are positive
+        activation='relu' # Use relu activation function because all inputs are positive
         ))
 
     model.add(layers.Dense(
         20, 
-        activation='sigmoid' 
+        activation='relu'
         ))
     
     model.add(layers.Dense(
         20, 
-        activation='sigmoid' 
+        activation='relu'
         ))
     
     model.add(layers.Dense(
         20, 
-        activation='sigmoid'
+        activation='relu'
         ))
     
     model.add(layers.Dense(
