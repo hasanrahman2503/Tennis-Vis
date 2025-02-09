@@ -14,7 +14,6 @@ def get_data():
     limited_array_in = np_array_specific[:1000]
     limited_array_out = np_out[:1000]
 
-    print(limited_array_in)
     x_train = np.array(limited_array_in, dtype=float)
     y_train = np.array(limited_array_out, dtype=float)  # Quadratic relationship
 
