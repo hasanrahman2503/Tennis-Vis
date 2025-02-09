@@ -1,7 +1,7 @@
 # Our results
 <img src="https://github.com/hasanrahman2503/Tennis-Vis/blob/f23e33be15189ca8d15af555f829896e8ba8b2c6/Pictures/Generation1.png" width="400" height="50"><img src="https://github.com/hasanrahman2503/Tennis-Vis/blob/0ace92b2dd8cfc7150f0e5f512e23e901ae3296b/Pictures/Generation150.png" width="400" height="50">
 \
-As we can see the model gets much better when we train it, it greatly minimises the cost function. Its loss starts of at about 500, and quickly becomes extremly low after it is trained for many generations.
+As we can see the model gets much better when we train it, it greatly minimises the cost function. Its loss starts of at about 500, and quickly becomes extremly negetive after it is trained for many generations. Which shows the model is adjusting parameters and is learning to fit our data better, if this will mean it is actually a good model is an entirely different conversation.
 # How we can use our model?
 We can use our model to evaluate a players moves, see how favourably or unfavourably the model views it. Next we can try alter some of the paramters e.g.(ball_bounce_v) if increasing it significantly improved the outcome from the model, that could be an area of improvment. With the reverse also being true.
 
