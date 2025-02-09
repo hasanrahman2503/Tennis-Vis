@@ -13,7 +13,8 @@ def get_data():
     np_out = data.iloc[:, 12].values
     limited_array_in = np_array_specific[:1000]
     limited_array_out = np_out[:1000]
-    
+
+    print(limited_array_in)
     x_train = np.array(limited_array_in, dtype=float)
     y_train = np.array(limited_array_out, dtype=float)  # Quadratic relationship
 
@@ -23,22 +24,22 @@ def train_model(x_train,y_train):
     model.add(layers.Dense(
         20, # Amount of Neurons
         input_dim=8, # Define an input dimension because this is the first layer
-        activation='relu' # Use relu activation function because all inputs are positive
+        activation='sigmoid' # Use relu activation function because all inputs are positive
         ))
 
     model.add(layers.Dense(
         20, 
-        activation='relu' 
+        activation='sigmoid' 
         ))
     
     model.add(layers.Dense(
         20, 
-        activation='relu' 
+        activation='sigmoid' 
         ))
     
     model.add(layers.Dense(
         20, 
-        activation='relu' 
+        activation='sigmoid'
         ))
     
     model.add(layers.Dense(
@@ -48,11 +49,11 @@ def train_model(x_train,y_train):
 
     load_model(model)
 
-    learning_rate = 0.0001
+    learning_rate = 1
     optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
     
-    model.compile(optimizer=optimizer, loss='mean_squared_error')
-    model.fit(x_train, y_train, epochs=150)#, batch_size=500
+    model.compile(optimizer=optimizer, loss='binary_crossentropy')
+    model.fit(x_train, y_train, epochs=150, batch_size=500)#, batch_size=500
 
     save_model(model)
 
